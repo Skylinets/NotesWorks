@@ -1,4 +1,4 @@
-package com.skyline.notes.ui.note
+package com.skyline.notes.ui.note.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

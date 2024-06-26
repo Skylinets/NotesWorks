@@ -1,4 +1,4 @@
-package com.skyline.notes.di
+package com.skyline.notes.di.module
 
 import com.skyline.notes.api.ApiService
 import com.skyline.notes.data.NotesRepository

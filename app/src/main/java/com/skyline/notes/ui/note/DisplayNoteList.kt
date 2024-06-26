@@ -14,33 +14,39 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.skyline.notes.BuildConfig
 import com.skyline.notes.data.NotesResponse
 import kotlinx.coroutines.flow.StateFlow
 
 @Composable
-fun NoteList(notes: StateFlow<List<NotesResponse>>) {
+fun DisplayNoteList(notes: StateFlow<List<NotesResponse>>) {
     Column(Modifier.fillMaxSize()) {
-        Text(text = BuildConfig.FLAVOR)
+        Text(text = BuildConfig.FLAVOR, fontSize = FontSizeFlavor)
 
         LazyColumn(modifier = Modifier.fillMaxWidth()) {
             items(items = notes.value) { note ->
                 Card(
-                    shape = RoundedCornerShape(5.dp),
-                    elevation = 4.dp,
+                    shape = RoundedCornerShape(ShapeCard),
+                    elevation = ElevationCard,
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(4.dp),
+                            .padding(PaddingCardValues),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Text(text = note.note)
-                        Spacer(modifier = Modifier.padding(5.dp))
+                        Text(text = note.note, fontSize = FontSizeItemCard)
+                        Spacer(modifier = Modifier.padding(PaddingCardValues))
                     }
                 }
             }
         }
     }
 }
+private val ShapeCard = 5.dp
+private val ElevationCard = 4.dp
+private val PaddingCardValues = 7.dp
+private val FontSizeFlavor = 25.sp
+private val FontSizeItemCard = 15.sp

@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import com.skyline.notes.ui.main.MainState
+import com.skyline.notes.ui.note.components.DisplayLoading
+import com.skyline.notes.ui.note.components.SnackBarLaunched
 import com.skyline.notes.viewmodel.MainViewModel
 
 @Composable
@@ -17,7 +19,7 @@ fun NoteScreen(viewModel: MainViewModel) {
         }
         MainState.Loading -> DisplayLoading()
         is MainState.Notes -> {
-            NoteList(notes = viewModel.notes)
+            DisplayNoteList(notes = viewModel.notes)
         }
         else -> {}
     }

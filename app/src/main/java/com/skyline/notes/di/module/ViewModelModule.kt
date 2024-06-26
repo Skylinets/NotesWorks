@@ -1,6 +1,7 @@
-package com.skyline.notes.di
+package com.skyline.notes.di.module
 
 import com.skyline.notes.data.NotesRepository
+import com.skyline.notes.di.ViewModelFactory
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

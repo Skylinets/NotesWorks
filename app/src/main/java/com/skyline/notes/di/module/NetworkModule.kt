@@ -1,8 +1,9 @@
-package com.skyline.notes.di
+package com.skyline.notes.di.module
 
 import android.content.Context
 import com.skyline.notes.BuildConfig
 import com.skyline.notes.api.ApiService
+import com.skyline.notes.di.LocalFileInterceptor
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
