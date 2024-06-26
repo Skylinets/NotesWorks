@@ -1,0 +1,60 @@
+[versions]
+agp = "8.3.1"
+kotlin = "1.9.0"
+coreKtx = "1.12.0"
+junit = "4.12"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+material = "1.11.0"
+activity = "1.8.0"
+constraintlayout = "2.1.4"
+retrofit = "2.9.0"
+okhttp = "5.0.0-alpha.10"
+daggerVersion = "2.51"
+lifecycle = "2.5.1"
+coroutines = "1.6.4"
+compose = "1.5.2"
+livedata = "2.4.0"
+runtime = "1.2.0"
+ksp = "1.9.0-1.0.12"
+lifecycleRuntimeKtx = "2.7.0"
+coil = "1.4.0"
+mockk = "1.12.0"
+expressoCore = "3.5.1"
+
+[libraries]
+androidx-expreso-core = { group = "androidx.test.espresso", name = "expreso-core", version.ref  ="expressoCore"}
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+retrofit2 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-gson-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+dagger2 = { module = "com.google.dagger:dagger", version.ref = "daggerVersion" }
+dagger2-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "daggerVersion" }
+google-dagger = { module = "com.google.dagger:dagger", version.ref = "daggerVersion" }
+okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose" }
+lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "livedata" }
+lifecycle-runtime = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "runtime" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+coil_compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin"}
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

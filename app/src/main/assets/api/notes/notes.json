@@ -1,0 +1,24 @@
+{
+  "notes": [
+    {
+      "id": "1",
+      "note": "Compra de supermercado",
+      "content": "Comprar leche, pan, huevos y café"
+    },
+    {
+      "id": "2",
+      "note": "Reunión de trabajo",
+      "content": "Reunión con el equipo a las 10:00 AM para discutir el proyecto"
+    },
+    {
+      "id": "3",
+      "note": "Recordatorio de cita médica",
+      "content": "Cita con el dentista el jueves a las 3:00 PM"
+    },
+    {
+      "id": "4",
+      "note": "Lista de tareas",
+      "content": "1. Terminar el informe\n2. Enviar correos pendientes\n3. Llamar a clientes"
+    }
+  ]
+}
