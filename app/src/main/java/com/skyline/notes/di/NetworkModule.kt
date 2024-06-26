@@ -1,6 +1,7 @@
 package com.skyline.notes.di
 
 import android.content.Context
+import com.skyline.notes.BuildConfig
 import com.skyline.notes.api.ApiService
 import dagger.Module
 import dagger.Provides
@@ -15,15 +16,17 @@ object NetworkModule {
     @Provides
     @Singleton
     fun providesOkHttpClient(context: Context): OkHttpClient {
-        return OkHttpClient.Builder()
-            .addInterceptor(LocalFileInterceptor(context))
-            .build()
+        val clientBuilder = OkHttpClient.Builder()
+        if (BuildConfig.FLAVOR == "dummy") {
+            clientBuilder.addInterceptor(LocalFileInterceptor(context))
+        }
+        return clientBuilder.build()
     }
     @Provides
     @Singleton
     fun providesRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://10.0.2.2:8000/")
+            .baseUrl(BuildConfig.BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

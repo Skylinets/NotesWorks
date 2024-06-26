@@ -6,7 +6,7 @@ import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.Protocol
 import okhttp3.Response
-import okhttp3.ResponseBody
+import okhttp3.ResponseBody.Companion.toResponseBody
 
 class LocalFileInterceptor(private val context: Context) : Interceptor {
 
@@ -22,10 +22,8 @@ class LocalFileInterceptor(private val context: Context) : Interceptor {
                 .request(request)
                 .protocol(Protocol.HTTP_1_1)
                 .body(
-                    ResponseBody.create(
-                        "application/json".toMediaTypeOrNull(),
-                        jsonString.toByteArray()
-                    )
+                    jsonString.toByteArray()
+                        .toResponseBody("application/json".toMediaTypeOrNull())
                 )
                 .addHeader("content-type", "application/json")
                 .build()

@@ -15,8 +15,8 @@ import org.junit.Test
 
 class MainViewModelTest {
 
-    lateinit var repository: NotesRepository
-    lateinit var mainViewModel: MainViewModel
+    private lateinit var repository: NotesRepository
+    private lateinit var mainViewModel: MainViewModel
 
     @Before
     fun setup(){
@@ -64,7 +64,7 @@ class MainViewModelTest {
         val actual = kotlin.runCatching { mainViewModel.getNotes() }
         assertEquals(errorMessage, actual.exceptionOrNull()?.message)
     }
-    fun stubRepository(notes: NotesListResponse){
+    private fun stubRepository(notes: NotesListResponse){
         coEvery { repository.getNotes() } returns notes
     }
 }

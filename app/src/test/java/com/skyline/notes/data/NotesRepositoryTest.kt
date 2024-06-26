@@ -45,10 +45,10 @@ class NotesRepositoryTest {
         assertEquals(expected, result)
     }
 
-    fun stubRepository(notes: NotesListResponse){
+    private fun stubRepository(notes: NotesListResponse){
         coEvery { repository.getNotes() } returns notes
     }
-    fun stubApiService(notes: NotesListResponse){
+    private fun stubApiService(notes: NotesListResponse){
         coEvery { apiService.getNotes() } returns notes
     }
 }

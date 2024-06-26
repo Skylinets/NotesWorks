@@ -27,6 +27,19 @@ android {
             )
         }
     }
+
+    flavorDimensions("environment")
+    productFlavors {
+        create("dummy") {
+            dimension = "environment"
+            buildConfigField("String", "BASE_URL", "\"http://localhost/\"")
+        }
+        create("uat") {
+            dimension = "environment"
+            buildConfigField("String", "BASE_URL", "\"https://a2f960695b744e208e8d04bb27c46a04.api.mockbin.io/\"")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -36,6 +49,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.compose.get()
