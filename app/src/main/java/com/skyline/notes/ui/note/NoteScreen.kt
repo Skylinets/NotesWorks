@@ -1,6 +1,5 @@
 package com.skyline.notes.ui.note
 
-import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue

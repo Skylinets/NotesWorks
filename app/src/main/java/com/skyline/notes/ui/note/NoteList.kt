@@ -1,6 +1,5 @@
 package com.skyline.notes.ui.note
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,7 +14,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.skyline.notes.data.NotesResponse
-import com.skyline.notes.viewmodel.MainViewModel
 import kotlinx.coroutines.flow.StateFlow
 
 @Composable

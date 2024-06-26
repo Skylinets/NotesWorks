@@ -1,10 +1,7 @@
 package com.skyline.notes.di
 
 import android.content.Context
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.skyline.notes.api.ApiService
-import com.skyline.notes.data.NotesResponse
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
