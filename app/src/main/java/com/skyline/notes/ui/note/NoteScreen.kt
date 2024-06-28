@@ -19,7 +19,7 @@ fun NoteScreen(viewModel: MainViewModel) {
         }
         MainState.Loading -> DisplayLoading()
         is MainState.Notes -> {
-            DisplayNoteList(notes = viewModel.notes)
+            DisplayNoteList(notes = currentState.notes)
         }
         else -> {}
     }

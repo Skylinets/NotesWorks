@@ -22,10 +22,9 @@ class MainViewModel(
     private val _state = MutableStateFlow<MainState>(MainState.Idle)
     val state: StateFlow<MainState> = _state.asStateFlow()
 
-    val userIntent = Channel<MainIntent>(Channel.UNLIMITED)
+    private val userIntent = Channel<MainIntent>(Channel.UNLIMITED)
 
-    val _notes = MutableStateFlow<List<NotesResponse>>(emptyList())
-    val notes: StateFlow<List<NotesResponse>> get() = _notes
+    private val _notes = MutableStateFlow<List<NotesResponse>>(emptyList())
 
     init {
         handleIntent()

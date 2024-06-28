@@ -17,15 +17,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.skyline.notes.BuildConfig
 import com.skyline.notes.data.NotesResponse
-import kotlinx.coroutines.flow.StateFlow
 
 @Composable
-fun DisplayNoteList(notes: StateFlow<List<NotesResponse>>) {
+fun DisplayNoteList(notes: List<NotesResponse>) {
     Column(Modifier.fillMaxSize()) {
         Text(text = BuildConfig.FLAVOR, fontSize = FontSizeFlavor)
 
         LazyColumn(modifier = Modifier.fillMaxWidth()) {
-            items(items = notes.value) { note ->
+            items(items = notes) { note ->
                 Card(
                     shape = RoundedCornerShape(ShapeCard),
                     elevation = ElevationCard,
