@@ -1,41 +1,37 @@
 package com.skyline.notes.di.module
 
-import android.content.Context
 import com.skyline.notes.BuildConfig
 import com.skyline.notes.api.ApiService
+import com.skyline.notes.data.NotesRepository
 import com.skyline.notes.di.LocalFileInterceptor
-import dagger.Module
-import dagger.Provides
 import okhttp3.OkHttpClient
+import org.koin.core.module.dsl.factoryOf
+import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
 
-@Module
-object NetworkModule {
 
-    @Provides
-    @Singleton
-    fun providesOkHttpClient(context: Context): OkHttpClient {
-        val clientBuilder = OkHttpClient.Builder()
-        if (BuildConfig.FLAVOR == "dummy") {
-            clientBuilder.addInterceptor(LocalFileInterceptor(context))
-        }
-        return clientBuilder.build()
+val networkModule = module {
+    single { BuildConfig.FLAVOR }
+    single { LocalFileInterceptor(get()) }
+
+    single {
+        OkHttpClient.Builder().apply {
+            if (get<String>() == "dummy") {
+                addInterceptor(get<LocalFileInterceptor>())
+            }
+        }.build()
     }
-    @Provides
-    @Singleton
-    fun providesRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder()
+
+    single {
+        Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
-            .client(okHttpClient)
+            .client(get())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
 
-    @Provides
-    @Singleton
-    fun providesApiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
-    }
+    single { get<Retrofit>().create(ApiService::class.java) }
+
+    factoryOf(::NotesRepository)
 }

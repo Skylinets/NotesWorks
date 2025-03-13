@@ -1,16 +1,12 @@
 package com.skyline.notes.di.module
 
+import androidx.lifecycle.ViewModel
 import com.skyline.notes.data.NotesRepository
-import com.skyline.notes.di.ViewModelFactory
-import dagger.Module
-import dagger.Provides
-import javax.inject.Singleton
+import com.skyline.notes.viewmodel.MainViewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
-@Module
-object ViewModelModule {
-    @Provides
-    @Singleton
-    fun provideViewModelFactory(repository: NotesRepository): ViewModelFactory {
-        return ViewModelFactory(repository)
-    }
+val viewModelModule = module {
+    viewModel { MainViewModel(get<NotesRepository>()) }
 }
+

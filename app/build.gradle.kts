@@ -25,6 +25,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
 
@@ -69,8 +70,8 @@ dependencies {
     implementation(libs.retrofit2)
     implementation(libs.retrofit.gson.converter)
     implementation(libs.okhttp.logging)
-    implementation(libs.dagger2)
-    implementation(libs.google.dagger)
+    //implementation(libs.dagger2)
+    //implementation(libs.google.dagger)
     implementation(libs.coil.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -80,6 +81,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.insert.koin)
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)

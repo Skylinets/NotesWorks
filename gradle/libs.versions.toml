@@ -22,6 +22,7 @@ lifecycleRuntimeKtx = "2.7.0"
 coil = "1.4.0"
 mockk = "1.12.0"
 expressoCore = "3.5.1"
+koin = "3.3.2"
 
 [libraries]
 androidx-expreso-core = { group = "androidx.test.espresso", name = "expreso-core", version.ref  ="expressoCore"}
@@ -53,6 +54,7 @@ coil_compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin"}
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+insert-koin = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
