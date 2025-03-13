@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.skyline.notes"
+    namespace = "com.skyline.notesworks"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.skyline.notes"
+        applicationId = "com.skyline.notesworks"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -70,8 +70,6 @@ dependencies {
     implementation(libs.retrofit2)
     implementation(libs.retrofit.gson.converter)
     implementation(libs.okhttp.logging)
-    //implementation(libs.dagger2)
-    //implementation(libs.google.dagger)
     implementation(libs.coil.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
